@@ -32,14 +32,18 @@ final class AppModel {
   }
   
   private func handle(response: ComputerVisionClient.Response) {
-    self.firebase.log(.computerVisionResponse(FirebaseClient.ComputerVisionResponse(
-      response,
-      selectedSport,
-      cvComputationTime
-    )))
+    Task {
+      try await Task.sleep(for: .seconds(1))
+      
+      // grayson this is the line you are adding
+      self.firebase.log(.computerVisionResponse(FirebaseClient.ComputerVisionResponse(
+        response,
+        selectedSport,
+        cvComputationTime
+      )))
+    }
   }
 }
-
 
 // MARK: SwiftUI
 
@@ -47,10 +51,8 @@ struct AppView: View {
   @Bindable var model = AppModel()
   
   var body: some View {
-    NavigationStack {
-      Text("App")
-        .task { await self.model.task() }
-    }
+    Text("App")
+      .task { await self.model.task() }
   }
 }
 
