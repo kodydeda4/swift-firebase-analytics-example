@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33AFA2D02D300FAE00A77EF7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 33AFA2CF2D300FAE00A77EF7 /* ComposableArchitecture */; };
 		33AFA2DE2D301B7200A77EF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 33AFA2DD2D301B7200A77EF7 /* Logging */; };
+		33AFA2F62D30267500A77EF7 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 33AFA2F52D30267500A77EF7 /* AsyncAlgorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 			files = (
 				33AFA2DE2D301B7200A77EF7 /* Logging in Frameworks */,
 				33AFA2D02D300FAE00A77EF7 /* ComposableArchitecture in Frameworks */,
+				33AFA2F62D30267500A77EF7 /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 			packageProductDependencies = (
 				33AFA2CF2D300FAE00A77EF7 /* ComposableArchitecture */,
 				33AFA2DD2D301B7200A77EF7 /* Logging */,
+				33AFA2F52D30267500A77EF7 /* AsyncAlgorithms */,
 			);
 			productName = FirebaseAnalyticsExample;
 			productReference = 33AFA2B52D300F2600A77EF7 /* FirebaseAnalyticsExample.app */;
@@ -106,6 +109,7 @@
 			packageReferences = (
 				33AFA2CE2D300FAE00A77EF7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				33AFA2DC2D301B7200A77EF7 /* XCRemoteSwiftPackageReference "swift-log" */,
+				33AFA2F42D30267500A77EF7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 33AFA2B62D300F2600A77EF7 /* Products */;
@@ -355,6 +359,14 @@
 				version = 1.6.2;
 			};
 		};
+		33AFA2F42D30267500A77EF7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -367,6 +379,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 33AFA2DC2D301B7200A77EF7 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		33AFA2F52D30267500A77EF7 /* AsyncAlgorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33AFA2F42D30267500A77EF7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
+			productName = AsyncAlgorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

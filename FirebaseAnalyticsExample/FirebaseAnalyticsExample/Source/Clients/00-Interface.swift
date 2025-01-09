@@ -1,10 +1,11 @@
 import ComposableArchitecture
+import AsyncAlgorithms
 
 // MARK: - ComputerVision
 
 @DependencyClient
 struct ComputerVisionClient: DependencyKey {
-  var delegate: @Sendable () async -> Channel<DelegateEvent> = { .init() }
+  var delegate: @Sendable () async -> AsyncChannel<DelegateEvent> = { .init() }
   
   @CasePathable
   enum DelegateEvent: Codable {

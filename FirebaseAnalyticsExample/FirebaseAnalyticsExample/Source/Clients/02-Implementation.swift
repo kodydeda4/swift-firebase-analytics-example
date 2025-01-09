@@ -1,18 +1,19 @@
 import ComposableArchitecture
+import AsyncAlgorithms
 
 // MARK: - ComputerVision
 
 extension ComputerVisionClient {
   static var liveValue: ComputerVisionClient {
     let log = Loggers.computerVisionClient
-    let events = Channel<DelegateEvent>()
+    let events = AsyncChannel<DelegateEvent>()
     
     return ComputerVisionClient(
       delegate: {
         Task {
           while !Task.isCancelled {
             let event = DelegateEvent.newHittingMetric(.random())
-            events.send(event)
+            await events.send(event)
             log.info("\(prettyPrintDescription(event))")
             try? await Task.sleep(for: .seconds(60))
           }

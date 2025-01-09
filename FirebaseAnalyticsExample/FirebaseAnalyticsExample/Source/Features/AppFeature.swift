@@ -16,7 +16,7 @@ final class AppModel {
   func task() async {
     await withTaskGroup(of: Void.self) { taskGroup in
       taskGroup.addTask {
-        for await event in await self.computerVision.delegate().values() {
+        for await event in await self.computerVision.delegate() {
           await self.handle(event: event)
         }
       }

@@ -1,6 +1,7 @@
 import Foundation
 
 internal extension FirebaseClient.ComputerVisionResponse {
+  
   /// `ComputerVisionClient.Response` -> `FirebaseClient.ComputerVisionResponse`
   init(
     _ result: ComputerVisionClient.Response,
