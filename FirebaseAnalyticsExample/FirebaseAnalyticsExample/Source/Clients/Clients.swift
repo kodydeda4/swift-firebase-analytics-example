@@ -1,6 +1,4 @@
 import ComposableArchitecture
-import CoreMedia
-import SwiftUI
 
 // MARK: - ComputerVision
 
